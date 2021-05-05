@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ascii-image</title>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+
+	<style>
+		#img-input {
+			display: none;
+		}
+
+		#ascii-output {
+			width: 512px;
+			height: 512px;
+			resize: none;
+			white-space: pre;
+			overflow-wrap: normal;
+			overflow: hidden;
+			padding: 0;
+		}
+
+		#img-output, #ascii-output {
+			border: 1px solid black;
+		}
+
+		.btn {
+			border: 1px solid #1c1e26;
+			border-radius: 0.25rem;
+
+			background-color: transparent;
+			color: #1c1e26;
+
+			font-size: 12pt;
+			font-family: 'Roboto', sans-serif;
+			padding: 0.5rem;
+
+			transition: background-color 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+		}
+
+		.btn:hover {
+			background-color: #1c1e26;
+			color: white;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<div style="position: relative; left: 50%; transform: translateX(-50%); margin: 1rem 0; display: inline-block;">
+			<label for="img-input" class="btn">Upload file</label>
+			<input type="file" accept="image/*" id="img-input">
+	
+			<button id="clear-btn" class="btn">Clear</button>
+		</div>
+	</div>
+	<div>
+		<div style="position: relative; left: 50%; transform: translateX(-50%); display: inline-block;">
+			<canvas id="img-output" width="512" height="512"></canvas>
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="position: relative; bottom: 256px; transform: translateY(50%);"><path d="M24 12l-10-10v7h-14v6h14v7z"/></svg>
+			<textarea id="ascii-output" wrap="soft"></textarea>
+		</div>
+	</div>
+</body>
+</html>
